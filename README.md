@@ -1,35 +1,41 @@
-# Project Name
+# Garmin Apps
 
-**Status**: 🔴 POC | **Mode**: 🤖 Claude Code | **Updated**: YYYY-MM-DD
+Custom watch faces and apps for Garmin smartwatches, built with the [Connect IQ](https://developer.garmin.com/connect-iq/sdk/) platform and Monkey C.
 
-Brief description of what this project does.
+## Motivation
 
-## Features
+Write personal watch faces and utility apps that can be sideloaded directly onto a Garmin watch, without depending on the Connect IQ Store ecosystem.
 
-- Feature 1
-- Feature 2
-- Feature 3
+## Planned Apps
+
+| App | Description | Status |
+|-----|-------------|--------|
+| Analog Watch Face | Simple, elegant watch face with hands | Planned |
+| Lap Counter | One-button counter for laps, reps, etc. | Planned |
+| Motion Logger | Record accelerometer/GPS data for swim stroke analysis | Planned |
+
+## Platform Notes
+
+- **Language:** Monkey C (object-oriented, influenced by C/Java/JavaScript/Python)
+- **SDK:** Free Connect IQ SDK with VS Code extension
+- **Sideloading:** Build produces a `.prg` file that can be copied to `/GARMIN/APPS/` on the watch via USB -- no store account required
+- **Signing:** Apps must be signed with a self-generated RSA 4096-bit key
+- **Limitation:** Sideloaded apps cannot use Connect IQ app settings (settings require the Store)
 
 ## Getting Started
 
-Instructions for setup and usage.
+1. Install the [Connect IQ SDK](https://developer.garmin.com/connect-iq/sdk/)
+2. Install the Monkey C extension for VS Code
+3. Generate a developer key (RSA 4096-bit)
+4. Build the app (`monkeyc` or via VS Code)
+5. Connect your watch via USB and copy the `.prg` file to `/GARMIN/APPS/`
 
-## Documentation
+## References
 
-- `STATUS.log` - Project status and progress tracking
-- `CLAUDE.md` - Claude Code instructions and conventions
-- See other documentation files as needed
+- [Connect IQ SDK](https://developer.garmin.com/connect-iq/sdk/)
+- [Connect IQ Basics](https://developer.garmin.com/connect-iq/connect-iq-basics/)
+- [Monkey C Language Reference](https://developer.garmin.com/connect-iq/monkey-c/)
 
-## Status Legend
+## Status
 
-- 🔴 POC / Early Stage
-- 🟡 MVP / In Progress
-- 🔵 Beta / Feature Complete
-- 🟢 Production / Active
-- ⚫ Maintenance / Template
-
-## Mode Legend
-
-- 🤖 Claude Code
-- 👤 Manual
-- 🔀 Hybrid
+Research and planning phase. See `readme.log` for detailed research notes.
